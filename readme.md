@@ -23,12 +23,10 @@ However, accessing myConst before the declaration line throws a ReferenceError. 
 
 </details>
 
-## Question 2. Swapping variables
-## Two variables values can be swapped in one destructuring expression.
+## Question 2. Swapping variables by destructuring.
 
 <details><summary><b>Answer</b></summary>
-
-Without destructuring assignment, swapping two values requires a temporary variable (or, in some low-level languages, the XOR-swap trick).
+    Without destructuring assignment, swapping two values requires a temporary variable (or, in some low-level languages, the XOR-swap trick).
 <br/>
 
 ```js 
@@ -47,3 +45,58 @@ console.log(arr); // [1,3,2]
 </details>
 
 
+
+## Question 3. Primitive vs no-primitive.
+
+<details><summary><b>Answer</b></summary>
+1 Primitive values are immutable. they can be reassigned
+
+<br/>
+
+```js 
+
+/**
+ *Primitive values are copied by value
+ */
+function primitiveMutator(val) {
+    val = val + 1;
+}
+let x = 1;
+primitiveMutator(x);
+console.log(x); // 1
+
+
+
+/**
+ *Non-primitive values are copied by reference
+ */
+function objectMutator(val) {
+    val.prop = val.prop + 1;
+}
+let obj = { prop: 1 };
+objectMutator(obj);
+console.log(obj.prop); // 2
+
+
+```
+
+
+2 Primitive values (except for the mystical NaN value) will always be exactly equal to another primitive with an equivalent value
+```js 
+const first = "abc" + "def";
+const second = "ab" + "cd" + "ef";
+console.log(first === second); // true
+```
+
+However, constructing equivalent non-primitive values will not result in values which are exactly equal
+
+```js
+const obj1 = { name: "Intrinsic" };
+const obj2 = { name: "Intrinsic" };
+console.log(obj1 === obj2); // false
+// Though, their .name properties ARE primitives:
+console.log(obj1.name === obj2.name); // true
+```
+
+
+</details>
