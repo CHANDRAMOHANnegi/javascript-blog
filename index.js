@@ -20,14 +20,22 @@
 /***************************/
 
 
-const arr = [1, 2, 3]
-arr[5] = 'hello';
+// const arr = [1, 2, 3]
+// arr[5] = 'hello';
 
 
-arr.forEach(e => console.log(typeof e))
+// arr.forEach(e => console.log(typeof e))
 
- console.log(arr)
- console.log(arr.length)
+//  console.log(arr)
+//  console.log(arr.length)
+
+
+
+
+
+/***************************/
+/***************************/
+
 
 
 // (function () {
@@ -39,6 +47,15 @@ arr.forEach(e => console.log(typeof e))
 
 // console.log("b defined? " + (typeof b !== 'undefined') + "  " + b);
 // console.log("a defined? " + (typeof a !== 'undefined') + "  " + a);
+
+
+
+
+
+/***************************/
+/***************************/
+
+
 
 // var length = 10;
 // function fn() {
@@ -56,6 +73,12 @@ arr.forEach(e => console.log(typeof e))
 
 
 
+
+/***************************/
+/***************************/
+
+
+
 // (function () {
 //     try {
 //         throw new Error();
@@ -67,3 +90,18 @@ arr.forEach(e => console.log(typeof e))
 //     console.log(y);  // 2
 // })();
 
+
+
+
+
+// Array.prototype.mymap = function (callback) {
+//     const resultArray = [];
+//     for (let index = 0; index < this.length; index++) {
+//         resultArray.push(callback(this[index], index, this));
+//     }
+//     return resultArray;
+// }
+
+// const sample = [1, 2, 3]
+
+// sample.mymap(val => console.log(val))
